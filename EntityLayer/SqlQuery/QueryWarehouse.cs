@@ -46,11 +46,11 @@ namespace EntityLayer.SqlQuery
                                             ,[City]=@City
                                                 WHERE    Id = @Id";
 
-            public static String Delete => "DELETE  FROM EMPLOYEE WİTH(NOLOCK) WHERE Id =@Id";
+            public static String Delete => "DELETE FROM EMPLOYEE  WHERE Id =@Id";
 
-            public static String GetAll => "SELECT * FROM EMPLOYEE WİTH(NOLOCK)"; //DEADLOCK PROBLEM SOLVED
+            public static String GetAll => "SELECT * FROM EMPLOYEE WITH(NOLOCK)"; //DEADLOCK PROBLEM SOLVED
 
-            public static String GetByID => "SELECT * FROM EMPLOYEE WİTH(NOLOCK) WHERE Id = @Id";
+            public static String GetByID => "SELECT * FROM EMPLOYEE WITH(NOLOCK) WHERE Id = @Id";
 
         }
 

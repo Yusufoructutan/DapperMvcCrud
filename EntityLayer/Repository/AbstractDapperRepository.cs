@@ -126,7 +126,8 @@ namespace EntityLayer.Repository
             catch (Exception ex)
             {
 
-                //todolog;
+                        throw new Exception("Delete işlemi sırasında bir hata oluştu.", ex);
+                
             }
 
 

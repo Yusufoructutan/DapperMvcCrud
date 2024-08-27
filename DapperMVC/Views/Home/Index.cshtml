@@ -1,24 +1,52 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div style="margin-top:3%">
-    <h2>Welcome  Index Page</h2>
+<!-- Font Awesome CSS -->
+<link href="~/Content/font-awesome.css" rel="stylesheet" />
+<div class="container mt-5">
+    <div class="text-center">
+        <h2>Welcome to the Index Page</h2>
+    </div>
 
 
 
-    <!--Buraya partia view gelecek-->
-
- 
-    @Html.Action("_partialEmployeeList", "Home"); <!--PArtial Adı - Controller Adı-->
-
-
-    <!--Buraya partia view gelecek-->
-
-
-
+    <div>
+        <!-- Partial View İçeriği -->
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h4>Employee List</h4>
+            </div>
+            <div class="mt-5 mb-4">
+                <!-- Add New Employee Button -->
+                <div class="text-center">
+                    <a href="@Url.Action("CreateEmployee", "Home")" class="btn btn-primary btn-lg">
+                        <i class="fa fa-user-plus mr-2"></i> Add a New Employee
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                @Html.Action("_partialEmployeeList", "Home")
+            </div>
+        </div>
+        <!-- Partial View İçeriği -->
+    </div>
 </div>
 
+<style>
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
 
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
 
+    .btn-lg {
+        font-size: 1.25rem;
+        padding: 0.5rem 1.25rem;
+        border-radius: 0.3rem;
+    }
+</style>

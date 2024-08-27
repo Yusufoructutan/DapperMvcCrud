@@ -1,0 +1,117 @@
+﻿@model EntityLayer.Employee
+
+@{
+    ViewBag.Title = "Employee Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}<link href="~/Content/font-awesome.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Employee Details</h2>
+
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h4>
+        </div>
+
+        <div class="card-body p-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="detail-item">
+                        <span class="detail-label">@Html.DisplayNameFor(model => model.FirstName):</span>
+                        <span class="detail-value">@Html.DisplayFor(model => model.FirstName)</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail-item">
+                        <span class="detail-label">@Html.DisplayNameFor(model => model.LastName):</span>
+                        <span class="detail-value">@Html.DisplayFor(model => model.LastName)</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail-item">
+                        <span class="detail-label">@Html.DisplayNameFor(model => model.DateOfBirth):</span>
+                        <span class="detail-value">@Html.DisplayFor(model => model.DateOfBirth)</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail-item">
+                        <span class="detail-label">@Html.DisplayNameFor(model => model.StartDate):</span>
+                        <span class="detail-value">@Html.DisplayFor(model => model.StartDate)</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail-item">
+                        <span class="detail-label">@Html.DisplayNameFor(model => model.Department):</span>
+                        <span class="detail-value">@Html.DisplayFor(model => model.Department)</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail-item">
+                        <span class="detail-label">@Html.DisplayNameFor(model => model.PhoneNumber):</span>
+                        <span class="detail-value">@Html.DisplayFor(model => model.PhoneNumber)</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail-item">
+                        <span class="detail-label">@Html.DisplayNameFor(model => model.Email):</span>
+                        <span class="detail-value">@Html.DisplayFor(model => model.Email)</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail-item">
+                        <span class="detail-label">@Html.DisplayNameFor(model => model.City):</span>
+                        <span class="detail-value">@Html.DisplayFor(model => model.City)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer text-center">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary btn-lg">
+                <i class="fa fa-arrow-left mr-2"></i> Back to List
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .detail-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+
+    .detail-label {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .detail-value {
+        color: #555;
+    }
+
+    .card {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .card-body {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+</style>

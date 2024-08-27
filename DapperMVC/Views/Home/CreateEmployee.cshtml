@@ -6,7 +6,7 @@
 <h2 class="text-center mt-5">Create Employee</h2>
 
 <hr />
-
+<link href="~/Content/font-awesome.css" rel="stylesheet" />
 @model EntityLayer.Employee
 
 <div class="d-flex justify-content-center mt-5">
@@ -22,38 +22,38 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="FirstName">First Name</label>
-                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @id = "FirstName" })
                         </div>
+
                         <div class="form-group col-md-6">
                             <label for="LastName">Last Name</label>
-                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @id = "LastName" })
                         </div>
-                    </div>
 
-                    <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="DateOfBirth">Date of Birth</label>
-                            @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control"})
+                            @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", @id = "DateOfBirth", @type = "date" })
                         </div>
+
                         <div class="form-group col-md-6">
                             <label for="Email">Email</label>
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @id = "Email", @type = "email" })
                         </div>
-                    </div>
 
-                    <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="Department">Department</label>
-                            @Html.TextBoxFor(m => m.Department, new { @class = "form-control" })
+                            @Html.TextBoxFor(m => m.Department, new { @class = "form-control", @id = "Department" })
                         </div>
+
                         <div class="form-group col-md-6">
                             <label for="PhoneNumber">Phone Number</label>
-                            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control"})
+                            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @id = "PhoneNumber" })
                         </div>
                     </div>
 
                     <div class="text-center">
                         <button class="btn btn-success btn-lg mt-3" type="submit">Kaydet | Save</button>
+                        @Html.ActionLink("List Page", "Index", null, new { @class = "btn btn-primary btn-lg mt-3 ml-3" })
                     </div>
                 </div>
             </div>
