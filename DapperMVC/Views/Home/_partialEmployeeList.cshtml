@@ -1,0 +1,91 @@
+﻿
+
+
+@{
+
+    Layout = null;
+}
+
+@model IEnumerable<EntityLayer.Employee>
+
+
+<style>
+    #employee{
+        border-collapse;  
+    }
+</style>
+
+
+
+<div style="margin-left:10%; margin-right:10%;margin-top:5%;">
+
+    <table id="employee" class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.FullNAme)
+                </th>
+
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.DateOfBirth)
+
+                </th>
+
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.City)
+
+                </th>
+
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Department)
+
+                </th>
+
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Email)
+
+                </th>
+
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+
+                </th>
+            </tr>
+
+        </thead>
+
+
+        <!--Veriyi yazdığımız yerimiz başlıyor-->
+
+        @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr class="table">
+                        <td>@Html.DisplayFor(modelItem => item.FullNAme)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DateOfBirth)</td>
+                        <td>@Html.DisplayFor(modelItem => item.City)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Department)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-secondary" }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-secondary" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-secondary" }) |
+
+
+
+                        </td>
+
+                    </tr>  
+
+
+                </tbody>
+            }
+
+
+    </table>
+
+
+
+</div>

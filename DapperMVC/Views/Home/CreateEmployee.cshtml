@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Create Employee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center mt-5">Create Employee</h2>
+
+<hr />
+
+@model EntityLayer.Employee
+
+<div class="d-flex justify-content-center mt-5">
+    <div class="col-md-8 col-lg-6">
+        @using (Html.BeginForm("CreateEmployee", "Home", FormMethod.Post))
+        {
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Add New Employee | Yeni Çalışan Ekle</h4>
+                </div>
+
+                <div class="card-body p-4">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="FirstName">First Name</label>
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="LastName">Last Name</label>
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="DateOfBirth">Date of Birth</label>
+                            @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control"})
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="Email">Email</label>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="Department">Department</label>
+                            @Html.TextBoxFor(m => m.Department, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="PhoneNumber">Phone Number</label>
+                            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control"})
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-success btn-lg mt-3" type="submit">Kaydet | Save</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
